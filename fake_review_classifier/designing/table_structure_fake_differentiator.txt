@@ -1,0 +1,31 @@
+
+Feature                  AI-Generated Reviews                      Script-Generated Reviews                     Hijacked Reviews                             Why It Matters
+------------------------ ---------------------------------------   ------------------------------------------   ------------------------------------------   ---------------------------------------------------------------------------------------------------
+Review Length            100-500 words                             10-30 words                                  Inherits length from original                AI overwrites;
+                         (overly detailed)                         (ultra-concise)                              reviews (varies)                             scripts use templates;
+                                                                                                                                                             hijacked retains authentic structure
+Specificity              Generic terms                             Repeated phrases                             Mismatched features                          Only hijacked reviews describe
+                         ("great quality",                         ("Best ever!",                               (e.g., mentions battery on a cable)          nonexistent product attributes
+                         "highly recommend")                       "Fast shipping ⭐⭐⭐⭐⭐")
+Language Patterns        Flawless grammar, low typos,              Repetitive errors,                           Original errors preserved,                   AI avoids mistakes;
+                         neutral sentiment                         exaggerated ALL-CAPS/emojis                  may conflict with new product                scripts copy-paste errors;
+                                                                                                                                                             hijacked shows historical artifacts
+Timing                   Posted within minutes                     Bursts of 50-200                             Reviews predate product                      AI/script are instant;
+                         of purchase                               reviews/hour                                 (e.g., 2021 reviews on 2024 item)            hijacked relies on old reviews
+Similarity Score         40-70% similarity                         >90% similarity                              Unique but feature-mismatched                Scripts copy-paste;
+                         (paraphrased)                             (identical clones)                                                                        AI rewords;
+                                                                                                                                                             hijacked is authentic but wrong product
+Reviewer History         New accounts (<30 days),                  Sudden category focus                        Abrupt category shifts                       Fraud farms specialize;
+                         no prior purchases                        (e.g., only phone                            (e.g., reviewed books → now chargers)        hijackers repurpose old accounts
+                                                                   accessories)
+Media Attachments        Rare (<5%), generic                       Minimal (<2%), reused                        Mismatched media                             Hijacked reviews retain original
+                         stock images                              images across reviews                        (e.g., shows phone case for cable listing)   photos/videos from unrelated products
+Helpful Votes            Extremely low (<1%)                       Near-zero (0.2%)                             Artificially high                            Authentic votes attached to wrong
+                                                                                                                (inherits votes from original product)       product inflate credibility
+Burstiness               Steady trickle (1-5/hr)                   Extreme spikes (100+                         Sudden influx after ASIN merge               Scripts mass-deploy;
+                                                                   in 1 hour)                                   (not purchase-driven)                        hijacking creates artificial rating jumps
+Feature Consistency      30-50% match with product                 20-40% match (vague)                         <20% match                                   Hijacked reviews fundamentally mismatch
+                                                                                                                (reviews describe different item)            current product specs
+Sentiment Distribution   Overwhelmingly 5⭐ with                    99% 5⭐ or 1⭐                               Inconsistent                                 Hijacked inherits original sentiment,
+                         "polite negatives"                        (extreme)                                    (5⭐ for old product, 1⭐ for new)            creating unnatural rating distributions
+```

@@ -1,0 +1,35 @@
+Column Name                  Genuine Review Behavior                           Fake Review Behavior                                                         Why It Matters
+---------------------------  ------------------------------------------------- ---------------------------------------------------------------------------- -----------------------------------------------------------------------------------
+Review Length (Words)        50-300 words,                                     AI: 100-500 words;                                                           Humans are concise;
+                             variable                                          Script: 10-30 words;                                                         AI overwrites;
+                                                                               Hijacked: Inherits original length                                           scripts are templated;
+                                                                                                                                                            hijacked mismatches
+Specificity Score            High (mentions                                    AI: Generic terms;                                                           Genuine reviews include
+                             specific features/experiences)                    Script: Repeated phrases;                                                    unique details fakes
+                                                                               Hijacked: Feature mismatch                                                   can't replicate
+Sentiment Variance           Balanced (pros/cons in                            AI/Script: Extreme positivity (5⭐) or                                       Fake reviews lack
+                             3-4⭐ reviews)                                   negativity (1⭐);                                                           nuanced criticism
+                                                                               Hijacked: Inconsistent sentiment
+Review Timing (Hours)        24-72h after purchase                             AI/Script: Posted instantly;                                                 Humans need usage time;
+                                                                               Hijacked: Predates product launch                                            fakes are automated/pre-existing
+Templating Score             Low (unique structure)                            Script: >80% similarity;                                                     Scripts reuse templates;
+                                                                               AI: Moderate similarity;                                                     AI has detectable patterns
+                                                                               Hijacked: Original structure
+Reviewer History             Diverse categories/purchase types                 AI/Script: Single category focus;                                            Fraud accounts show narrow focus
+                                                                               Hijacked: Sudden category shift
+Feature Mention Match        90-100% alignment                                 AI/Script: <40% alignment;                                                   Hijacked reviews mention
+                             with product                                      Hijacked: <20% alignment                                                     nonexistent features
+Media Upload Rate            15-30% include                                    AI/Script: <5% media;                                                        Genuine reviewers add proof;
+                             photos/videos                                     Hijacked: Inherits original media (often mismatched)                         fakes avoid/skip media
+Account Age (Days)           >180 days average                                 AI/Script: <30 days;                                                         Fraud farms use new accounts
+                                                                               Hijacked: Old accounts (>365 days)                                           (AI/script) or hijack old accounts
+Burstiness Index             Organic distribution                              AI/Script: 50-200 reviews/hour;                                              Coordinated campaigns create
+                             (1-5/day)                                         Hijacked: Sudden review influx after ASIN change                             unnatural spikes
+Language Imperfections       1-3 typos/colloquialisms                          AI: Flawless grammar;                                                        Perfection indicates AI;
+                             per review                                        Script: Repetitive errors;                                                   consistent errors indicate scripts
+                                                                               Hijacked: Original errors preserved
+Helpful Votes Ratio          10-40% of reviews                                 AI/Script: <2% get votes;                                                    Humans write vote-worthy content;
+                             get votes                                         Hijacked: Inherits original votes (may mismatch)                             fakes get ignored
+Cross-ASIN Duplication       <5% similarity with                               Script: >90% similarity;                                                     Scripts copy-paste;
+                             other reviews                                     AI: 40-70% similarity;                                                       AI paraphrases;
+                                                                               Hijacked: Unique but mismatched                             
