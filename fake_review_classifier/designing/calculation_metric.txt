@@ -1,0 +1,81 @@
+AIzaSyB1O1HaUkHmXrakakKzU2CkQBtRi-H5kBQ
+
+
+Human-Generated Reviews: Calculative Indicators (Single Line)
+
+Review Length: 50-300 words, variable and organic distribution.
+Specificity Score: High, with many unique, product-specific keywords and action verbs.
+Language Patterns: 1-3 typos per review, conversational Flesch-Kincaid score (e.g., Grade 6-10).
+Time Spent Reviewing: > 200 seconds (or similar threshold, implying reading/typing time).
+Posting Timing: 24-72 hours after purchase/delivery, or longer, showing natural usage lag.
+Reviewer Account Age: Average >180 days.
+Reviewer Activity Rate: Organic, low rate (1-5 reviews per week/month), no sudden spikes.
+Reviewer Category Diversity: High index, reviews span multiple product categories.
+Media Attachment Rate: 15-30% of reviews include authentic photos/videos.
+Helpful Votes Ratio: 10-40% of reviews receive organic helpful votes.
+Cross-ASIN Similarity: <10% similarity to other reviews.
+Sentiment Distribution: Balanced sentiment across reviews, showing nuanced opinions.
+IP/User ID Linkage: Low incidence of same IP, different user IDs creating multiple reviews.
+Typing Error Rate: Normal, expected human error rate (e.g., 1-3 errors per 100 words).
+Defect Mention Rate: Realistic minor flaws or areas for improvement are mentioned in some reviews.
+
+
+
+
+AI-Generated Reviews: Calculative Indicators (Single Line)
+
+Review Length: 100-500 words, often on the higher end, with less natural variance than human reviews.
+Specificity Score: Moderate-low, generic terms and descriptions, lower density of product-specific action verbs.
+Language Patterns: Zero typos, high grammar score (e.g., near 100%), often more formal or academic tone.
+Time Spent Reviewing: Near zero seconds (instant submission after "generation").
+Posting Timing: Within minutes of "purchase" or product listing, often indicating automated posting.
+Reviewer Account Age: Average <30 days.
+Reviewer Activity Rate: Steady, low-volume trickle (1-5 reviews per hour), but consistent.
+Reviewer Category Diversity: Low, often focused on a single product type or brand.
+Media Attachment Rate: <5% (very rare), often generic stock images or no media.
+Helpful Votes Ratio: <1% (extremely low), indicating content isn't useful to real users.
+Cross-ASIN Similarity: 40-70% similarity (paraphrased content across different products).
+Sentiment Distribution: Overwhelmingly 5-star (e.g., >90% 5-star), with minimal or "polite negatives."
+IP/User ID Linkage: High incidence of same IP address linked to many different user IDs.
+Typing Error Rate: Zero errors.
+Defect Mention Rate: Very low, or only "polite negatives" that feel fabricated.
+
+
+
+Script-Generated Reviews: Calculative Indicators (Single Line)
+
+Review Length: 10-30 words, ultra-concise and repetitive, extremely low variance.
+Specificity Score: Very low, repeated generic phrases ("Best ever!"), almost no unique product details.
+Language Patterns: High incidence of repetitive, consistent errors; frequent use of ALL-CAPS or excessive emojis.
+Time Spent Reviewing: Near zero seconds (automated bulk submission).
+Posting Timing: Extreme bursts (50-200 reviews per hour), often at regular, synchronized timestamps.
+Reviewer Account Age: Average <30 days, often newly created for campaigns.
+Reviewer Activity Rate: Massive spikes (hundreds per hour), then often dormant.
+Reviewer Category Diversity: Very low, accounts often focus on one product or a very narrow category.
+Media Attachment Rate: <2% (extremely rare), often reused generic images.
+Helpful Votes Ratio: Near zero (0.2%), content is clearly not helpful to genuine users.
+Cross-ASIN Similarity: >90% similarity (identical clones or slight word changes).
+Sentiment Distribution: Extreme, almost exclusively 5-star or 1-star (e.g., 99% in one extreme).
+IP/User ID Linkage: High incidence of same IP address linked to many different user IDs (farm activity).
+Typing Error Rate: Consistent, repeated error patterns unique to the script.
+Defect Mention Rate: Zero flaws mentioned in positive reviews, or only extreme, non-specific criticism in negative reviews.
+
+
+
+Hijacked Reviews: Calculative Indicators (Single Line)
+
+Review Length: Inherits original length (variable), not indicative of current product.
+Specificity Score: Very low match (<20%) to current product features, describes nonexistent attributes.
+Language Patterns: Preserves original errors/style, which may conflict with new product's nature.
+Time Spent Reviewing: N/A (these are old reviews, not new submissions).
+Posting Timing: Reviews predate the current product's launch or ASIN change (e.g., 2021 reviews on a 2024 item).
+Reviewer Account Age: Average >365 days (often very old, established accounts).
+Reviewer Activity Rate: Sudden, non-purchase-driven influx after an ASIN merge/change.
+Reviewer Category Diversity: Abrupt, illogical shifts in categories for old accounts.
+Media Attachment Rate: Mismatched media (e.g., shows phone case for cable listing), inherited from original product.
+Helpful Votes Ratio: Artificially high (inherits votes from the original, relevant product).
+Cross-ASIN Similarity: Unique content (from original product) but fundamentally mismatched to the new ASIN.
+Sentiment Distribution: Inconsistent (5-star for old product, 1-star for new), creating unnatural rating distributions for the current product.
+IP/User ID Linkage: N/A (focus is on account history and content mismatch, not generation origin).
+Typing Error Rate: Original errors from the legitimate review are preserved.
+Defect Mention Rate: Mentions authentic flaws, but these flaws are for a different product than the one listed.

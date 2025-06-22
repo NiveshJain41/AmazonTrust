@@ -1,0 +1,304 @@
+import pandas as pd
+import os
+import numpy as np
+from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.ensemble import RandomForestClassifier, VotingClassifier
+import joblib
+import warnings
+warnings.filterwarnings('ignore')
+
+# Import multiple algorithms
+try:
+    from xgboost import XGBClassifier
+    XGBOOST_AVAILABLE = True
+except ImportError:
+    XGBOOST_AVAILABLE = False
+    print("XGBoost not available. Install with: pip install xgboost")
+
+try:
+    from lightgbm import LGBMClassifier
+    LIGHTGBM_AVAILABLE = True
+except ImportError:
+    LIGHTGBM_AVAILABLE = False
+    print("LightGBM not available. Install with: pip install lightgbm")
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+
+class AdvancedBotClassifier:
+    def __init__(self, product_file_map):
+        self.product_file_map = product_file_map
+        self.model = None
+        self.ensemble_model = None
+        self.label_encoders = {}
+        self.scaler = StandardScaler()
+        self.model_trained = False
+        self.algorithm = 'ensemble'
+        self.feature_names = [
+            'BuyingTime_Seconds', 'PageViewDuration', 'CartTime_Seconds',
+            'CouponUsed', 'DiscountApplied', 'PaymentMethod', 'ProductViewCount',
+            'ProductSearchCount', 'AddToCart_RemoveCount', 'ReviewsRead',
+            'DeviceType', 'MouseClicks', 'KeyboardStrokes'
+        ]
+        self.categorical_features = ['CouponUsed', 'DiscountApplied', 'PaymentMethod', 'DeviceType']
+        self.training_metrics = {}
+
+          return X, y, list(X.columns)
+
+    def train_model(self, algorithm='ensemble'):
+        """Train the classifier with specified algorithm"""
+        self.algorithm = algorithm
+
+        # Load data
+        df_all = self.load_all_data()
+        if df_all is None or len(df_all) == 0:
+            return {
+                "success": False,
+                "message": "No training data available",
+                "report": None
+            }
+
+        try:
+            # Prepare data
+            X, y, feature_names = self.prepare_data(df_all)
+            print(f"\n🔧 Training with {X.shape[1]} features: {feature_names}")
+
+            # Split data
+            X_train, X_test, y_train, y_test = train_test_split(
+                X, y, test_size=0.25, random_state=42, stratify=y
+            )
+
+            # Scale features for algorithms that need it
+            X_train_scaled = self.scaler.fit_transform(X_train)
+            X_test_scaled = self.scaler.transform(X_test)
+
+            # Train based on selected algorithm
+            if algorithm == 'ensemble':
+                self.model = self._train_ensemble(X_train, X_train_scaled, y_train)
+            elif algorithm == 'xgboost' and XGBOOST_AVAILABLE:
+                self.model = self._train_xgboost(X_train, y_train)
+            elif algorithm == 'lightgbm' and LIGHTGBM_AVAILABLE:
+                self.model = self._train_lightgbm(X_train, y_train)
+            elif algorithm == 'random_forest':
+                self.model = self._train_random_forest(X_train, y_train)
+            else:
+                # Fallback to Random Forest
+                self.model = self._train_random_forest(X_train, y_train)
+                algorithm = 'random_forest'
+
+            # Evaluate model
+            if algorithm == 'ensemble':
+                y_pred = self.model.predict(X_test_scaled if hasattr(self.model, 'predict') else X_test)
+                y_pred_proba = self.model.predict_proba(X_test_scaled if hasattr(self.model, 'predict_proba') else X_test)[:, 1]
+            else:
+                y_pred = self.model.predict(X_test)
+                y_pred_proba = self.model.predict_proba(X_test)[:, 1]
+
+            # Calculate metrics
+            report = classification_report(y_test, y_pred, output_dict=True, target_names=['Human', 'Bot'])
+            auc_score = roc_auc_score(y_test, y_pred_proba)
+
+            # Feature importance
+            feature_importance_df = self._get_feature_importance(feature_names)
+
+            # Cross-validation score
+            cv_scores = cross_val_score(self.model, X_train, y_train, cv=5, scoring='f1')
+
+            # Store metrics
+            self.training_metrics = {
+                'accuracy': report['accuracy'],
+                'f1_bot': report['1']['f1-score'],
+                'precision_bot': report['1']['precision'],
+                'recall_bot': report['1']['recall'],
+                'auc': auc_score,
+                'cv_mean': cv_scores.mean(),
+                'cv_std': cv_scores.std()
+            }
+
+            # Save model
+            self.save_model()
+            self.model_trained = True
+            return {
+                "success": True,
+                "message": f"🎯 {algorithm.upper()} model trained successfully!\n"
+                          f"Accuracy: {report['accuracy']:.3f} | "
+                          f"Bot F1: {report['1']['f1-score']:.3f} | "
+                          f"AUC: {auc_score:.3f}",
+                "report": pd.DataFrame(report).transpose(),
+                "feature_importance": feature_importance_df,
+                "confusion_matrix": confusion_matrix(y_test, y_pred),
+                "metrics": self.training_metrics,
+                "algorithm": algorithm
+            }
+
+        except Exception as e:
+            return {
+                "success": False,
+                "message": f"Training failed: {str(e)}",
+                "report": None
+            }
+
+    def _train_ensemble(self, X_train, X_train_scaled, y_train):
+        """Train ensemble of multiple algorithms"""
+        estimators = []
+
+        # Random Forest
+        rf = RandomForestClassifier(n_estimators=200, max_depth=10, random_state=42)
+        estimators.append(('rf', rf))
+
+        # XGBoost (if available)
+        if XGBOOST_AVAILABLE:
+            xgb = XGBClassifier(n_estimators=200, max_depth=6, learning_rate=0.1, random_state=42)
+            estimators.append(('xgb', xgb))
+
+        # LightGBM (if available)
+        if LIGHTGBM_AVAILABLE:
+            lgb = LGBMClassifier(n_estimators=200, max_depth=6, learning_rate=0.1, random_state=42, verbose=-1)
+            estimators.append(('lgb', lgb))
+
+        # Create ensemble
+        if len(estimators) > 1:
+            ensemble = VotingClassifier(estimators=estimators, voting='soft')
+            ensemble.fit(X_train, y_train)
+        else:
+            # Fallback if no gradient boosting available
+            ensemble = RandomForestClassifier(n_estimators=300, max_depth=12, random_state=42)
+            ensemble.fit(X_train, y_train)
+
+        return ensemble
+
+    def _train_xgboost(self, X_train, y_train):
+        """Train XGBoost with hyperparameter tuning"""
+        xgb = XGBClassifier(
+            n_estimators=300,
+            max_depth=8,
+            learning_rate=0.1,
+            subsample=0.8,
+            colsample_bytree=0.8,
+            random_state=42,
+            eval_metric='logloss'
+        )
+        xgb.fit(X_train, y_train)
+        return xgb
+
+    def _train_lightgbm(self, X_train, y_train):
+        """Train LightGBM"""
+        lgb = LGBMClassifier(
+            n_estimators=300,
+            max_depth=8,
+            learning_rate=0.1,
+            subsample=0.8,
+            colsample_bytree=0.8,
+            random_state=42,
+            verbose=-1
+        )
+        lgb.fit(X_train, y_train)
+        return lgb
+    def _train_random_forest(self, X_train, y_train):
+        """Train Random Forest with hyperparameter tuning"""
+        rf = RandomForestClassifier(
+            n_estimators=300,
+            max_depth=12,
+            min_samples_split=5,
+            min_samples_leaf=2,
+            random_state=42
+        )
+        rf.fit(X_train, y_train)
+        return rf
+
+    def _get_feature_importance(self, feature_names):
+        """Get feature importance from the trained model"""
+        try:
+            if hasattr(self.model, 'feature_importances_'):
+                importance = self.model.feature_importances_
+            elif hasattr(self.model, 'estimators_'):
+                importance = np.mean([
+                    est.feature_importances_ for name, est in self.model.estimators_
+                    if hasattr(est, 'feature_importances_')
+                ], axis=0)
+            else:
+                return pd.DataFrame({'Feature': feature_names, 'Importance': [0] * len(feature_names)})
+
+            return pd.DataFrame({
+                'Feature': feature_names,
+                'Importance': importance
+            }).sort_values('Importance', ascending=False)
+        except:
+            return pd.DataFrame({'Feature': feature_names, 'Importance': [0] * len(feature_names)})
+
+    def save_model(self):
+        """Save model and preprocessing objects"""
+        joblib.dump(self.model, f"bot_detector_{self.algorithm}.pkl")
+        joblib.dump(self.label_encoders, "label_encoders.pkl")
+        joblib.dump(self.scaler, "scaler.pkl")
+        with open("feature_names.txt", "w") as f:
+            f.write(",".join(self.feature_names))
+
+    def load_model(self, algorithm='ensemble'):
+        """Load saved model"""
+        try:
+            model_file = f"bot_detector_{algorithm}.pkl"
+            if os.path.exists(model_file):
+                self.model = joblib.load(model_file)
+                self.label_encoders = joblib.load("label_encoders.pkl")
+                self.scaler = joblib.load("scaler.pkl")
+                self.algorithm = algorithm
+                self.model_trained = True
+                return True
+            return False
+        except Exception as e:
+            print(f"Error loading model: {e}")
+            return False
+
+    def predict_bot_probability(self, df):
+        """Predict bot probability with detailed analysis"""
+        if not self.model_trained and not self.load_model(self.algorithm):
+            df["ML_Bot_Chance (%)"] = "Model Not Trained"
+            df["Risk_Level"] = "Unknown"
+            df["Confidence"] = "Low"
+            return df
+
+        try:
+            df_copy = df.copy()
+
+            for feature in self.categorical_features:
+                if feature in df_copy.columns and feature in self.label_encoders:
+                    le = self.label_encoders[feature]
+                    df_copy[feature] = df_copy[feature].astype(str)
+                    mask = df_copy[feature].isin(le.classes_)
+                    df_copy.loc[mask, feature] = le.transform(df_copy.loc[mask, feature])
+                    df_copy.loc[~mask, feature] = 0
+
+            available_features = [f for f in self.feature_names if f in df_copy.columns]
+            X = df_copy[available_features].fillna(0)
+
+            if 'BuyingTime_Seconds' in X.columns and 'MouseClicks' in X.columns:
+                X['Time_per_Click'] = X['BuyingTime_Seconds'] / (X['MouseClicks'] + 1)
+            if 'ProductViewCount' in X.columns and 'PageViewDuration' in X.columns:
+                X['Avg_View_Time'] = X['PageViewDuration'] / (X['ProductViewCount'] + 1)
+            if 'ReviewsRead' in X.columns and 'ProductViewCount' in X.columns:
+                X['Research_Intensity'] = X['ReviewsRead'] / (X['ProductViewCount'] + 1)
+
+            if self.algorithm == 'ensemble':
+                X_scaled = self.scaler.transform(X)
+                probabilities = self.model.predict_proba(X_scaled)[:, 1]
+                predictions = self.model.predict(X_scaled)
+            else:
+                probabilities = self.model.predict_proba(X)[:, 1]
+                predictions = self.model.predict(X)
+
+            df["ML_Bot_Chance (%)"] = (probabilities * 100).round(1)
+            df["ML_Prediction"] = ["🤖 Bot" if p == 1 else "👤 Human" for p in predictions]
+            df["Risk_Level"] = df["ML_Bot_Chance (%)"].apply(lambda x: "🔴 High" if x > 80 else "🟡 Medium" if x > 50 else "🟢 Low")
+            df["Confidence"] = df["ML_Bot_Chance (%)"].apply(lambda x: "High" if abs(x - 50) > 30 else "Medium" if abs(x - 50) > 15 else "Low")
+
+        except Exception as e:
+            df["ML_Bot_Chance (%)"] = f"Error: {str(e)}"
+            df["ML_Prediction"] = "Error"
+            df["Risk_Level"] = "Unknown"
+            df["Confidence"] = "Low"
+
+        return df
+

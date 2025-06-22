@@ -1,0 +1,35 @@
+Column Name                     Human Behavior                  Bot Behavior             Why It Matters
+------------------------------- ------------------------------- ------------------------ --------------------------------------------------
+BuyingTime_Seconds              60-300 seconds                  1-15 seconds             Humans read, think, decide
+PageViewDuration                30-120 seconds                  0-5 seconds              Humans browse product details
+CartTime_Seconds                10-60 seconds                   0-3 seconds              Humans review cart items
+IP_Address                      Unique per user                 Shared across            Bots share IP/proxy
+                                                                multiple UserIDs
+
+UserID                          Consistent behavior             Different IDs,           Bot farms use multiple accounts
+                                                                same IP
+
+CouponUsed                      Sometimes                       Always                   Bots maximize discounts
+DiscountApplied                 Mixed                           Always                   Bots target sales
+PaymentMethod                   Varied                          Same across              Bots reuse payment info
+                                                                purchases
+
+ProductViewCount                3-10 views                      0-1 views                Humans compare products
+ProductSearchCount                   1-5 searches                    0 searches               Humans search, bots direct
+AddToCart_RemoveCount           1-3 changes                     0 changes                Humans change mind
+ReviewsRead                     1-10 reviews                    0 reviews                Humans research
+DeviceType                      Mobile/Desktop                  Desktop mostly           Bots prefer desktop automation
+MouseClicks                     10-50 clicks                    3-8 clicks               Humans explore, bots are direct
+KeyboardStrokes                 Natural typing                  No typing/fast           Bots auto-fill forms
+
+
+user - cod, upi, debit card, credit card, internet banking
+bot - credit card, internet banking
+
+
+
+X PurchaseHour                    9AM-11PM                        Any time                 Bots don't sleep
+X SessionCount_SameIP             1-2 users                       5-50 users               Multiple bots from same source
+X BrowserType                     Chrome/Safari/Firefox           Chrome (headless)        Bots use automated browsers
+
+

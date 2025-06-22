@@ -1,0 +1,25 @@
+Hijacked Reviews :
+product review does not match with descrition and more than 50 percent are like those reviws.
+then those 50 percent reviews are similar.
+posted at least 6 months ago.
+
+
+Scripted Revies : 
+very general words which does not tell much about the product.
+a lot of extremes, either 5star or 1star reviws.
+posted in regular time stamps like each 1 review per  unit.
+sudden account activity.
+same ip different userids.
+same in different products also.
+zero helpful votes.
+
+
+AI Generated Reviews :
+Related to product.
+Unnaturally fluent english.
+multiple at same time
+Flawless grammer.
+same ip different id
+zero typing time
+
+Human Generated Reviews : 

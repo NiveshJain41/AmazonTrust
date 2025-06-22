@@ -1,0 +1,324 @@
+/* Import Amazon-like fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* Global styles */
+* {
+    font-family: 'Open Sans', 'Amazon Ember', Arial, sans-serif !important;
+}
+
+/* Hide Streamlit default elements */
+.stDeployButton {
+    display: none;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+.stHeader {
+    display: none;
+}
+
+/* Main container */
+.main-container {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Amazon-style header */
+.amazon-header {
+    background: linear-gradient(135deg, #232f3e 0%, #37475a 100%);
+    color: white;
+    padding: 12px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.amazon-logo {
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #ff9900 !important;
+    margin: 0 !important;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+}
+
+.logo-subtitle {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+    color: #ff9900;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hero-title {
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    color: #232f3e !important;
+    margin-bottom: 15px !important;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-size: 18px !important;
+    color: #666666 !important;
+    margin-bottom: 0 !important;
+    font-weight: 400 !important;
+    text-align: center;
+}
+
+/* App cards */
+.app-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #ff9900;
+}
+
+.card-icon {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #232f3e !important;
+    margin-bottom: 15px !important;
+    text-align: center;
+}
+
+.card-description {
+    font-size: 16px !important;
+    color: #666666 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    text-align: center;
+}
+
+.card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature-tag {
+    background: #e8f5e8;
+    color: #2d5a2d;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #c3e6c3;
+}
+
+/* Streamlit buttons */
+.stButton > button {
+    
+    background: linear-gradient(135deg, #ff9900 0%, #ff8c00 100%) !important;
+    color: white !important;
+    /* CHANGE THIS LINE: */
+    border-radius: 8px  !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3) !important;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #ff8c00 0%, #ff7700 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(255, 153, 0, 0.4) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0px) !important;
+}
+
+/* Success messages */
+.stSuccess {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6c3 100%) !important;
+    border: 1px solid #28a745 !important;
+    border-radius: 8px !important;
+    color: #155724 !important;
+}
+
+/* Info section */
+.info-section {
+    background: white;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.info-item h4 {
+    font-size: 20px !important;
+    color: #232f3e !important;
+    margin-bottom: 15px !important;
+    font-weight: 600 !important;
+}
+
+.info-item p {
+    font-size: 16px !important;
+    color: #666666 !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+}
+
+/* Footer */
+.footer {
+    background: #232f3e;
+    color: #cccccc;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0 !important;
+    font-size: 14px !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-nav {
+        gap: 15px;
+    }
+    
+    .hero-title {
+        font-size: 28px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px !important;
+    }
+    
+    .app-card {
+        margin: 15px 0;
+        padding: 20px;
+    }
+    
+    .card-features {
+        justify-content: center;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Column adjustments */
+.stColumn {
+    padding: 0 10px !important;
+}
+
+/* Hide Streamlit branding */
+footer {
+    visibility: hidden;
+}
+
+.viewerBadge_container__1QSob {
+    display: none !important;
+}
+
+/* Additional Amazon-like styling */
+.element-container {
+    background: transparent !important;
+}
+
+.stMarkdown {
+    color: inherit !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

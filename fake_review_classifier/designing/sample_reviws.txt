@@ -1,0 +1,103 @@
+Genuine Reviews (Human)
+Review: "Battery lasts 6 hours on my iPhone 15 during hiking trips. Wish it charged faster though. ★★★★☆"
+
+⚙️ Signals: Specific use case, balanced critique, minor typo ("though" misspelled)
+
+Review: "Size L fits my 5'9" frame perfectly! Shrank a bit after wash – line dry recommended. Photo attached."
+
+⚙️ Signals: Personal dimensions, practical tip, authentic photo
+
+Review: "Used this blender daily for 3 weeks. Crushes ice well but leaks from base. Customer service replaced it."
+
+⚙️ Signals: Usage duration, defect + resolution, neutral tone
+
+Review: *"Good for price but smells chemical-y. Air it out 2 days before use. ★★★☆☆"*
+
+⚙️ Signals: Cost-value assessment, actionable advice, moderate rating
+
+Review: "My cat hates it! Returns to old bed immediately. Cushion is firm, not soft as advertised. ★★☆☆☆"
+
+⚙️ Signals: Emotional authenticity, feature mismatch callout
+
+Review: "Works with Samsung S23 Ultra case. Wireless charging intact, but edges feel sharp. ★★★☆☆"
+
+⚙️ Signals: Device-specific testing, pros/cons
+
+AI-Generated Reviews
+Review: "This product demonstrates satisfactory efficacy and optimal functionality under standard usage conditions."
+
+⚙️ Signals: Academic tone, zero personal pronouns, flawless grammar
+
+Review: "While generally commendable, the apparatus exhibits minor inefficiencies in its operational paradigm."
+
+⚙️ Signals: "Polite negativity", jargon ("paradigm"), no specifics
+
+Review: "A superlative addition to one's technological repertoire, enhancing productivity with seamless integration."
+
+⚙️ Signals: Thesaurus overload ("superlative"), vague benefits
+
+Review: "The device performs adequately, though marginally improved ergonomics could augment user satisfaction."
+
+⚙️ Signals: Passive voice, fabricated flaw ("marginally")
+
+Review: "Optimal value proposition observed vis-à-vis competing offerings in this market segment."
+
+⚙️ Signals: Business jargon ("value proposition"), no usage context
+
+Script-Generated Reviews
+Review: "Love it! Perfect! Fast shipping! ⭐⭐⭐⭐⭐"
+
+⚙️ Signals: 5-word template, excessive punctuation, generic praise
+
+Review: "Best product ever!!! Works great. A++++++"
+
+⚙️ Signals: Hyperbolic language, irregular rating symbols (A+)
+
+Review: "Terrible. Broke first use. Waste money. DO NOT BUY. ☆☆☆☆☆"
+
+⚙️ Signals: ALL CAPS aggression, no defect details
+
+Review: "Good quality. Nice. Satisfied. Recommend."
+
+⚙️ Signals: 2-word sentences, zero specifics
+
+Review: "Exactly as described. Very happy. Five stars."
+
+⚙️ Signals: Template used across 82 ASINs (per analysis)
+
+Review: "Fast delivery. Item ok. Thanks."
+
+⚙️ Signals: Focuses on shipping, avoids product details
+
+Hijacked Reviews
+Review on USB-C Cable: *"Lasts 12 hours on a single charge! Perfect for all-day meetings. ★★★★★"*
+
+⚙️ Signals: Mentions "battery life" for passive cable
+
+Review on Phone Stand: *"The 50MP camera takes stunning low-light photos. Better than my DSLR!"*
+
+⚙️ Signals: Describes camera (wrong product)
+
+Review on Desk Lamp: "Waterproof design survived pool parties. Kids love the color options!"
+
+⚙️ Signals: "Waterproof" irrelevant to lamp, "color options" mismatch
+
+Review on Bookshelf: "No more overheating! Stays cool under heavy gaming sessions."
+
+⚙️ Signals: Technical claim impossible for furniture
+
+Review on Coffee Mug: *"Wi-Fi 6 support boosts my internet speed significantly. ★★★★★"*
+
+⚙️ Signals: Tech specs on non-electronic product
+
+Review on Yoga Mat: "The i7 processor handles 4K editing smoothly. Rendering is 2x faster!"
+
+⚙️ Signals: CPU praise for fitness gear
+
+Review on Garden Hose: "Facial recognition works flawlessly even with masks. Worth every penny!"
+
+⚙️ Signals: Biometrics feature impossible for hose
+
+Review on Cutlery Set: "5G connectivity never drops calls. Signal strength excellent!"
+
+⚙️ Signals: Mobile network praise for kitchenware

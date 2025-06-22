@@ -1,0 +1,34 @@
+
+Feature                      Genuine (Human)               AI-Generated                 Script-Generated             Hijacked                     Why It Matters
+---------------------------  ---------------------------   --------------------------   --------------------------   --------------------------   -----------------------------------------------------------------------
+Review Length                50-300 words,                 100-500 words,               10-30 words,                 Varies (inherits             AI overwrites;
+                             organic flow                  unnaturally fluent           formulaic                    original length)             scripts are templated;
+                                                                                                                                                    hijacked mismatches length-content
+Specificity                  High (unique usage            Generic (vague               Low (repeated phrases        Feature mismatch             Genuine reviews mention
+                             details, flaws)               adjectives, no               across products)             (describes wrong             specific features absent in fakes
+                                                           concrete use)                                             product)
+Sentiment Balance            Nuanced (pros/cons in         Overly polite/neutral        Extreme (5⭐ hype/1⭐ hate)   Inconsistent with            Humans give balanced feedback;
+                             3-4⭐ reviews)               ("generally adequate")                                    current product rating       fakes push agendas
+Posting Timing               24-72h after delivery         Instant (within              Bursts (50-200/hr            Predates product             Humans need testing time;
+                             (usage time)                  minutes of purchase)         during campaigns)            launch/ASIN change           hijacked reviews appear before product exists
+Language Patterns            1-3 typos, colloquialisms     Flawless grammar,            Repetitive errors,           Original errors              Perfection indicates AI;
+                                                           academic tone                robotic phrasing             preserved                    consistent errors reveal scripts
+Media Attachments            15-30% with authentic         <2% (no media or             <5% (copied/reused media)    Inherits mismatched          Genuine reviewers add proof;
+                             photos/videos                 stock images)                                             media (wrong product)        fakes avoid media or reuse assets
+Reviewer History             Diverse categories,           New accounts (<30            Sudden activity spikes,      Old accounts (>1yr),         Fraud accounts lack authentic
+                             organic intervals             days), single                then dormant                 sudden category shift        purchase diversity
+                                                           category
+Feature Alignment            90-100% matches               30-50% match                 <40% match                   <20% match                   Hijacked reviews describe
+                             product specs                 (generic descriptions)       (copy-pasted templates)      (mentions nonexistent        completely different products
+                                                                                                                     features)
+Cross-ASIN Similarity        <10% similarity to            40-70% similarity            >90% similarity              Unique but wrong             Scripts reuse templates;
+                             other reviews                 (AI paraphrasing)            (identical templates)        product                      AI paraphrases;
+                                                                                                                                                    hijacked is authentic but misplaced
+Helpful Votes                10-40% receive organic        <2% receive votes            <1% receive votes            Inherits votes from          Humans write helpful content;
+                             votes                                                                                   original product             fake reviews get ignored by real users
+Burst Behavior               Organic (1-5 reviews/day)     AI farms (20-50/hr)          Script farms (50-200/hr)     Sudden influx after          Coordinated attacks create
+                                                                                                                     ASIN merge/change            unnatural activity spikes
+Defect Flags                 Mentions realistic minor      "Polite negativity"          No flaws (absolute           Authentic flaws for          Humans admit imperfections;
+                             flaws                         (forced 1 flaw in            praise/criticism)            different product            fakes avoid or fabricate flaws unnaturally
+                             5⭐)
+```
