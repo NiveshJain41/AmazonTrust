@@ -29,8 +29,9 @@ class Config:
     
     # Models folder path
     MODELS_FOLDER = os.path.join(BASE_DIR, "models")  # Add this line
-    
-    GEMINI_API_KEY = "AIzaSyB1O1HaUkHmXrakakKzU2CkQBtRi-H5kBQ"
+
+    #ENTER YOUR GEMINI KEY HERE
+    GEMINI_API_KEY = "Enter Your Gemini Key Here"
     MODEL_NAME = "gemini-2.0-flash"
 
     CATEGORY_FILE_MAP = {
